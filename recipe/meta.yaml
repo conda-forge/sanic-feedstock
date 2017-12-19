@@ -1,6 +1,6 @@
 {% set name = "sanic" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "f70fbd2483e372494d023a08259ffbeb757b3bce10bbf4a00b17a405de3ff322" %}
+{% set version = "0.7.0" %}
+{% set sha256 = "22b1a6f1dc55db8a136335cb0961afa95040ca78aa8c78425a40d91e8618e60e" %}
 
 package:
   name: {{ name|lower }}
@@ -25,7 +25,7 @@ requirements:
     - httptools >=0.0.9
     - ujson >=1.35
     - uvloop >=0.5.3  # [not win]
-    - websockets >=3.2
+    - websockets >=4.0
     - aiofiles >=0.3.0
 
 test:
@@ -36,7 +36,7 @@ about:
   home: https://github.com/channelcat/sanic
   summary: "Async Python 3.5+ web server that's written to go fast"
   license: MIT
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
