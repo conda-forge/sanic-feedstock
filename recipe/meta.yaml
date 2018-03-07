@@ -47,7 +47,6 @@ test:
     - sanic.testing
     - sanic.views
     - sanic.websocket
-    - sanic.worker  # [not win]
 
 about:
   home: https://github.com/channelcat/sanic
