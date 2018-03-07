@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
-  skip: True  # [py<35 or win]
+  skip: True  # [py<35]
 
 requirements:
   build:
@@ -31,6 +31,22 @@ requirements:
 test:
   imports:
     - sanic
+    - sanic.app
+    - sanic.blueprints
+    - sanic.config
+    - sanic.constants
+    - sanic.cookies
+    - sanic.exceptions
+    - sanic.handlers
+    - sanic.log
+    - sanic.request
+    - sanic.response
+    - sanic.router
+    - sanic.server
+    - sanic.static
+    - sanic.testing
+    - sanic.views
+    - sanic.websocket
 
 about:
   home: https://github.com/channelcat/sanic
@@ -41,3 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - kszucs
+    - nicoddemus
