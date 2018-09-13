@@ -1,6 +1,6 @@
 {% set name = "sanic" %}
-{% set version = "0.8.1" %}
-{% set sha256 = "7d322ca90a5c452dc87c52d0ec9627d52154f0d7fd8b985eb2fa1abe7de8d7d2" %}
+{% set version = "0.8.3" %}
+{% set sha256 = "ba2d3c493a885fbdd5434856890875e6f44d61ffaf65d22681e9a3b1bcc55647" %}
 
 package:
   name: {{ name|lower }}
