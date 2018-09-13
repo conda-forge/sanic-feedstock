@@ -1,6 +1,6 @@
 {% set name = "sanic" %}
-{% set version = "0.8.2" %}
-{% set sha256 = "22787b423da53ff707fa20f0bb35b93e75849f0a8dbd615e8a320049e9c7c773" %}
+{% set version = "0.8.3" %}
+{% set sha256 = "ba2d3c493a885fbdd5434856890875e6f44d61ffaf65d22681e9a3b1bcc55647" %}
 
 package:
   name: {{ name|lower }}
@@ -11,14 +11,15 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
-build:
+build:  
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [py<35]
 
 requirements:
   build:
     - python
+    - pip
     - setuptools
   run:
     - python
