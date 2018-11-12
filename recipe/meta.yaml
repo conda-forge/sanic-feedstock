@@ -1,26 +1,22 @@
-{% set name = "sanic" %}
 {% set version = "0.8.3" %}
-{% set sha256 = "ba2d3c493a885fbdd5434856890875e6f44d61ffaf65d22681e9a3b1bcc55647" %}
 
 package:
-  name: {{ name|lower }}
+  name: sanic
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/s/sanic/sanic-{{ version }}.tar.gz
+  sha256: ba2d3c493a885fbdd5434856890875e6f44d61ffaf65d22681e9a3b1bcc55647
 
-build:  
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+build:
+  number: 1000
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
   skip: True  # [py<35]
 
 requirements:
-  build:
+  host:
     - python
     - pip
-    - setuptools
   run:
     - python
     - httptools >=0.0.9
