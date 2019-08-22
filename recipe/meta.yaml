@@ -1,4 +1,4 @@
-{% set version = "19.6.2" %}
+{% set version = "19.6.3" %}
 
 package:
   name: sanic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sanic/sanic-{{ version }}.tar.gz
-  sha256: 7737773957447925a10ae4e66bfea40cb05319c2d916545c44e13b83f655f98e
+  sha256: 254587b7e7658e4ec1aa928b110620617d79eca917e4370bcf2b4ed9b6c6382c
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
     - ujson >=1.35  # [not win]
     - uvloop >=0.5.3  # [not win]    
     - aiofiles >=0.3.0
-    - websockets >=6.0,<7.0
+    - websockets >=7.0,<8.0
     - multidict >=4.0,<5.0
     - requests-async ==0.5.0
 
