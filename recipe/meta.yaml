@@ -1,4 +1,4 @@
-{% set version = "19.12.2" %}
+{% set version = "20.3.0" %}
 
 package:
   name: sanic
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sanic/sanic-{{ version }}.tar.gz
-  sha256: 0760b568245917481d65456721c1c50ba72e53e15a191392277751377f2cf770
+  sha256: b4078fe0654d0304f2e86e4f35f3d2d0d5aff56cc0e6d8978838282dff645aff
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
-  skip: True  # [py<36]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+  skip: true  # [py<36]
 
 requirements:
   host:
@@ -49,7 +49,7 @@ test:
 
 about:
   home: https://github.com/channelcat/sanic
-  summary: "Async Python 3.5+ web server that's written to go fast"
+  summary: Async Python 3.5+ web server that's written to go fast
   license: MIT
   license_file: LICENSE
 
