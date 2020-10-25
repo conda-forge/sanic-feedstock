@@ -5,11 +5,9 @@ Home: https://github.com/channelcat/sanic
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sanic-feedstock/blob/master/LICENSE.txt)
 
 Summary: Async Python 3.5+ web server that's written to go fast
-
-
 
 Current build status
 ====================
