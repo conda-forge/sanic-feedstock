@@ -21,11 +21,10 @@ requirements:
     - python
     - httptools >=0.0.10
     - ujson >=1.35  # [not win]
-    - uvloop >=0.5.3  # [not win]    
+    - uvloop >=0.5.3  # [not win]
     - aiofiles >=0.6.0
     - websockets >=8.1,<9.0
     - multidict >=5.0,<6.0
-    - httpx ==0.15.4
 
 test:
   imports:
