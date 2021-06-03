@@ -19,13 +19,13 @@ requirements:
     - pip
   run:
     - python
+    - sanic-routing >=0.6.0
     - httptools >=0.0.10
     - ujson >=1.35  # [not win]
     - uvloop >=0.5.3,<0.15.0  # [not win]
     - aiofiles >=0.6.0
     - websockets >=8.1,<9.0
     - multidict >=5.0,<6.0
-    - httpx
 
 test:
   imports:
