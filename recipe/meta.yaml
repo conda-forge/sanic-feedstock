@@ -23,6 +23,7 @@ requirements:
   run:
     - aiofiles >=0.6.0
     - httptools >=0.0.10
+    - multidict >=5.0
     - python
     - sanic-routing >=0.6.0
     - ujson >=1.35  # [not win]
