@@ -1,51 +1,44 @@
-{% set version = "20.12.2" %}
+{% set name = "sanic" %}
+{% set version = "21.3.4" %}
 
 package:
   name: sanic
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/sanic/sanic-{{ version }}.tar.gz
-  sha256: b9d7e24cd293c126f6f4aaf26fcc3b11e35338b86e8c2693b71d05196e7b02b0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 1cbd12b9138b3ca69656286b0be91fff02b826e8cb72dd76a2ca8c5eb1288d8e
 
 build:
-  number: 2
+  number: 0
+  skip: true  # [py<37]
+  entry_points:
+    - sanic = sanic.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
-  skip: true  # [py<36]
 
 requirements:
   host:
     - python
     - pip
   run:
-    - python
-    - httptools >=0.0.10
-    - ujson >=1.35  # [not win]
-    - uvloop >=0.5.3,<0.15.0  # [not win]
     - aiofiles >=0.6.0
+    - httptools >=0.0.10
+    - multidict >=5.0
+    - python
+    - sanic-routing >=0.6.0
+    - ujson >=1.35  # [not win]
+    - uvloop >=0.5.3  # [not win]
     - websockets >=8.1,<9.0
-    - multidict >=5.0,<6.0
-    - httpx
-
+    
 test:
   imports:
     - sanic
-    - sanic.app
-    - sanic.blueprints
-    - sanic.config
-    - sanic.constants
-    - sanic.cookies
-    - sanic.exceptions
-    - sanic.handlers
-    - sanic.log
-    - sanic.request
-    - sanic.response
-    - sanic.router
-    - sanic.server
-    - sanic.static
-    - sanic.testing
-    - sanic.views
-    - sanic.websocket
+    - sanic.mixins
+  commands:
+    - pip check
+    - sanic --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/channelcat/sanic
