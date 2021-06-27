@@ -1,5 +1,5 @@
 {% set name = "sanic" %}
-{% set version = "21.3.4" %}
+{% set version = "21.6.0" %}
 
 package:
   name: sanic
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1cbd12b9138b3ca69656286b0be91fff02b826e8cb72dd76a2ca8c5eb1288d8e
+  sha256: eeae886e94f8ee9cee61bf7e3a9c1974cb9cfd666002d2a0a4b82e007aa4f2dd
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - ujson >=1.35  # [not win]
     - uvloop >=0.5.3  # [not win]
     - websockets >=8.1,<9.0
-    
+
 test:
   imports:
     - sanic
