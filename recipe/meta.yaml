@@ -1,5 +1,5 @@
 {% set name = "sanic" %}
-{% set version = "21.6.1" %}
+{% set version = "21.6.2" %}
 
 package:
   name: sanic
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1425d750f6400ce3f8206a53bb5f1391e1e669f8de66c84c95ac3bfcb36ed66e
+  sha256: c35513d7dd68266f90c247cf8be710dacd5bbf60c6a4ffdb5c70829dffe8b795
 
 build:
   number: 0
