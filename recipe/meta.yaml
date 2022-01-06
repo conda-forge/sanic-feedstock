@@ -1,5 +1,5 @@
 {% set name = "sanic" %}
-{% set version = "21.12.0" %}
+{% set version = "21.12.1" %}
 
 package:
   name: sanic
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d01c509c03f526cdde432f54dd791ce247d84bff73f7c1200fd8c2054ad84f35
+  sha256: 6f15ecfef47d4288aac04d8741833a7701cd94f2d4a28fc5667ce2844363152d
 
 build:
   number: 0
@@ -25,10 +25,10 @@ requirements:
     - httptools >=0.0.10
     - multidict >=5.0,<6.0
     - python
-    - sanic-routing ==0.7.0
+    - sanic-routing =0.7
     - ujson >=1.35  # [not win]
     - uvloop >=0.5.3  # [not win]
-    - websockets >=9.0
+    - websockets >=10.0
 
 test:
   imports:
