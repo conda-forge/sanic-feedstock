@@ -23,9 +23,9 @@ requirements:
   run:
     - aiofiles >=0.6.0
     - httptools >=0.0.10
-    - multidict >=5.0,<6.0
+    - multidict >=5.0,<7.0
     - python
-    - sanic-routing =0.7
+    - sanic-routing >=22.3.0,<22.6.0
     - ujson >=1.35  # [not win]
     - uvloop >=0.5.3  # [not win]
     - websockets >=10.0
