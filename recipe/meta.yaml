@@ -10,7 +10,7 @@ source:
   sha256: ac29863e64377399ca5a99408d521409ba8a80f81013c0e2878fae88de5e9aa8
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   entry_points:
     - sanic = sanic.__main__:main
