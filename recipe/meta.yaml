@@ -25,10 +25,13 @@ requirements:
     - aiofiles >=0.6.0
     - httptools >=0.0.10
     - multidict >=5.0,<7.0
+    - html5tagger >=1.2.1
+    - tracerite >=1.0.0
+    - typing_extensions >=4.4.0
     - python
-    - sanic-routing >=22.8.0
+    - sanic-routing >=23.6.0
     - ujson >=1.35  # [not win]
-    - uvloop >=0.5.3  # [not win]
+    - uvloop >=0.15.0  # [not win]
     - websockets >=10.0
 
 test:
