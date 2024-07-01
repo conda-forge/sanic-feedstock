@@ -20,7 +20,7 @@ requirements:
   host:
     - python
     - pip
-    - setuptools <60.0
+    - setuptools >=70.1
   run:
     - aiofiles >=0.6.0
     - httptools >=0.0.10
