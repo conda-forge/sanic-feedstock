@@ -1,5 +1,6 @@
 {% set name = "sanic" %}
 {% set version = "25.3.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: sanic
@@ -10,20 +11,20 @@ source:
   sha256: 775d522001ec81f034ec8e4d7599e2175bfc097b8d57884f5e4c9322f5e369bb
 
 build:
-  number: 0
-  skip: true  # [py<38]
+  number: 1
+  noarch: python
   entry_points:
     - sanic = sanic.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools >=70.1
     - wheel
   run:
-    - python
+    - python >={{ python_min }}
     - sanic-routing >=23.12.0
     - httptools >=0.0.10
     - uvloop >=0.15.0  # [not win]
@@ -48,7 +49,7 @@ test:
 
 about:
   home: https://github.com/channelcat/sanic
-  summary: Async Python 3.5+ web server that's written to go fast
+  summary: Async Python 3.9+ web server and web framework that's written to go fast.
   license: MIT
   license_file: LICENSE
 
