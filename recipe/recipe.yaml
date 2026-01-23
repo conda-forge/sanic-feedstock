@@ -49,6 +49,7 @@ tests:
       imports:
         - sanic
         - sanic.mixins
+        - sanic.worker.daemon
       pip_check: true
       python_version:
         - ${{ python_min }}.*
