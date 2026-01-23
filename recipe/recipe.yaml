@@ -12,6 +12,8 @@ package:
 source:
   url: https://pypi.org/packages/source/s/sanic/sanic-${{ version }}.tar.gz
   sha256: ec124338f83a781da8095ed2676e60eb40c7fe21e7aa649a879f8860b4c7bd7a
+  patches:
+    - patches/3127-more-gating-around-windows.patch
 
 build:
   number: 0
