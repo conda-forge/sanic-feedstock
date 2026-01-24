@@ -12,11 +12,11 @@ package:
 source:
   url: https://pypi.org/packages/source/s/sanic/sanic-${{ version }}.tar.gz
   sha256: ec124338f83a781da8095ed2676e60eb40c7fe21e7aa649a879f8860b4c7bd7a
-  patches:
-    - patches/3127-more-gating-around-windows.patch
 
 build:
   number: 0
+  # see https://github.com/conda-forge/sanic-feedstock/pull/72
+  skip: match(version, "<=25.12.0") and noarch_platform == "win"
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -31,6 +31,7 @@ requirements:
     - setuptools >=70.1
     - wheel
   run:
+    - __${{ noarch_platform }}
     - ${{ "ujson >=1.35"    if noarch_platform == "unix" }}
     - ${{ "uvloop >=0.15.0" if noarch_platform == "unix" }}
     - aiofiles >=0.6.0
