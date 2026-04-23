@@ -1,0 +1,75 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "25.12.0"
+  python_check_max: "3.14"
+
+package:
+  name: sanic
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/s/sanic/sanic-${{ version }}.tar.gz
+  sha256: ec124338f83a781da8095ed2676e60eb40c7fe21e7aa649a879f8860b4c7bd7a
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - sanic = sanic.__main__:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools >=70.1
+    - wheel
+  run:
+    - __${{ noarch_platform }}
+    - ${{ "ujson >=1.35"    if noarch_platform == "unix" }}
+    - ${{ "uvloop >=0.15.0" if noarch_platform == "unix" }}
+    - aiofiles >=0.6.0
+    - html5tagger >=1.2.1
+    - httptools >=0.0.10
+    - multidict >=5.0,<7.0
+    - python >=${{ python_min }}
+    - sanic-routing >=23.12.0
+    - setuptools >=70.1.0
+    - tracerite >=2.2.0
+    - typing_extensions >=4.4.0
+    - websockets >=10.0
+
+tests:
+  - python:
+      imports:
+        - sanic
+        - sanic.mixins
+        - sanic.worker.daemon
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - sanic --help
+
+about:
+  summary: Async Python 3.9+ web server and web framework that's written to go fast.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/sanic
+  repository: https://github.com/sanic-org/sanic
+  documentation: https://sanic.dev/en/guide/introduction.html
+
+extra:
+  recipe-maintainers:
+    - ahopkins
+    - kszucs
+    - nicoddemus
+    - thewchan
