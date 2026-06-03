@@ -1,5 +1,5 @@
 {% set name = "sanic" %}
-{% set version = "25.3.0" %}
+{% set version = "25.12.1" %}
 
 package:
   name: sanic
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 775d522001ec81f034ec8e4d7599e2175bfc097b8d57884f5e4c9322f5e369bb
+  sha256: 7b51bf608e4030f06a6c002cd08fed2872e4936527e63c9a8a97d5cd06a2b47f
 
 build:
-  number: 1
-  skip: true  # [py<39]
+  number: 0
+  skip: true  # [py<39 or win]
   entry_points:
     - sanic = sanic.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
