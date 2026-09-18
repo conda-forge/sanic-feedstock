@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7b51bf608e4030f06a6c002cd08fed2872e4936527e63c9a8a97d5cd06a2b47f
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39 or win]
   entry_points:
     - sanic = sanic.__main__:main
